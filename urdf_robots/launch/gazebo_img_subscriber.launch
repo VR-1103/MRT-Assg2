@@ -1,0 +1,5 @@
+<launch>
+
+<node name="gazebo_img" pkg="urdf_robots" type="gazebo_image_subscriber.py" output="screen" respawn="true"/>
+
+</launch>
