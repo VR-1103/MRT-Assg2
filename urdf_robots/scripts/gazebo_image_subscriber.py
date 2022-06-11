@@ -16,11 +16,9 @@ def image_callback(msg):
     else:
         arucoDict = cv2.aruco.Dictionary_get(cv2.aruco.DICT_6X6_1000)
         arucoParams = cv2.aruco.DetectorParameters_create()
-        detection_img = cv2_img
         (corners, ids, rejected) = cv2.aruco.detectMarkers(cv2_img, arucoDict, parameters=arucoParams)
         if np.all(ids is not None):
-            cv2.aruco.drawDetectedMarkers(detection_img, corners, ids)
-            cv2.imshow('aruco_show', detection_img)
+            cv2.aruco.drawDetectedMarkers(cv2_img, corners, ids)
         cv2.imshow('gazebo_show', cv2_img)
         cv2.waitKey(10)
 
